@@ -5,9 +5,12 @@ public class Smartphone implements IPrehravac{
     }
     public void prehraj(boolean hraj){
         if (true){
-            System.out.println("Prehravani MP3 prehravace znacky"+ model +" spusteno ");
+            System.out.println("Prehravani Smartphone prehravace znacky "+ model +" spusteno ");
         }else{
-            System.out.println("Prehravani MP3 prehravace znacky"+ model +" vypnoto ");
+            System.out.println("Prehravani Smartphone prehravace znacky "+ model +" vypnoto ");
         }
+    }
+    public String toString(){
+        return "Smartphone "+model;
     }
 }

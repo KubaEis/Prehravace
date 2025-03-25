@@ -10,5 +10,8 @@ public class MP3 implements IPrehravac{
             System.out.println("Prehravani MP3 prehravace znacky"+znacka+" vypnoto ");
         }
     }
+    public String toString(){
+        return "MP3 "+znacka;
+    }
 
 }

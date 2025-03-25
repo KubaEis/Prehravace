@@ -6,4 +6,7 @@ public class Radio implements IPrehravac {
             System.out.println(" vypnoto ");
         }
     }
+    public String toString(){
+        return "Rádio ";
+    }
 }

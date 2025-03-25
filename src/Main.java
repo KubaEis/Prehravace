@@ -15,6 +15,11 @@ public class Main {
             System.out.println("2. pokud je to smartphone");
             System.out.println("3. pokud je to radio");
             int typ = sc.nextInt();
+            sc.nextLine();
+            if (typ < 1 || typ > 3) {
+                System.err.println("Spatne zadano, oopravte se");
+                i--;
+            }
             switch (typ) {
                 case 1 -> {
                     System.out.println("Zadej znacku MP3:");
@@ -34,7 +39,55 @@ public class Main {
                 }
             }
         }
-        if (smicka){
+        while (smicka){
+            System.out.println("Výtej v menu");
+            System.out.println("Stiskni:");
+            System.out.println("1. pokud chceš vypsat zařízení");
+            System.out.println("2. pokud chceš přehrát něco ze zařízení");
+            System.out.println("3. pokud chceš zastavit přehrávání ze zařízení");
+            System.out.println("4. pokud chceš přehrát danou písničku");
+            int volba = sc.nextInt();
+            sc.nextLine();
+
+            switch (volba) {
+                case 1 -> {
+                    for (int i = 0; i < prehravace.length; i++) {
+                        System.out.println(prehravace[i].toString());
+                    }
+                }
+                case 2 -> {
+                    System.out.println("Zadejte index přehrávače:");
+                    int index = sc.nextInt();
+                    if (index < prehravace.length || index > prehravace.length) {
+                        System.err.println("Spatne zadano, oopravte se");
+                        break;
+                    }
+                    sc.nextLine();
+                    prehravace[index].prehraj(true);
+                }
+                case 3 -> {
+                    System.out.println("Zadejte index přehrávače:");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+                    if (index < prehravace.length || index > prehravace.length) {
+                        System.err.println("Spatne zadano, oopravte se");
+                        break;
+                    }
+                    prehravace[index].prehraj(false);
+                }
+                case 4 -> {
+                    System.out.println("Zadejte index přehrávače:");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+                    if (index < prehravace.length || index > prehravace.length) {
+                        System.err.println("Spatne zadano, oopravte se");
+                        break;
+                    }
+                    System.out.println("Jakou chceš přehrát písničku?");
+                    String pisnicka = sc.nextLine();
+                    prehravace[index].prehraj(pisnicka);
+                }
+            }
 
         }
     }
